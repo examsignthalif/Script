@@ -1,0 +1,53 @@
+﻿<Window x:Class="Script.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Script"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="530" Height="300">
+    <Grid x:Name="xMainPanel">
+        <Grid Width="500" Height="250" Background="LightBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+                    <TextBlock Text="Class" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <TextBox x:Name="xGradeTB" Width="100" Height="30"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Button x:Name="xGetQuestion" Click="xGetQuestion_Click" Width="100" Height="30" Content="Get"></Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20,0,0,0">
+                    <TextBlock Text="Index start from 1" FontSize="14" FontWeight="Bold"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="xStartIndex" TextChanged="xStartIndex_TextChanged" Width="100" Height="30"></TextBox>
+                        <TextBox x:Name="xEndIndex" TextChanged="xEndIndex_TextChanged" Width="100" Height="30"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button x:Name="xChoosePath" Click="xChoosePath_Click" Content="Choose path" Width="100" Height="20" Margin="40,0,0,0"></Button>
+                <TextBlock x:Name="xPathNameTB"  VerticalAlignment="Center" Margin="20,0,0,0"></TextBlock>
+            </StackPanel>
+
+            <Button Content="Generate"  HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="150" Click="Button_Click" Height="40"/>
+            <Button x:Name="xInsertBtn" Visibility="Collapsed"  Grid.Row="3" Content="Insert into DB"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Click="Button_Click_1" Height="60"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="4">
+                <TextBlock Text="Count :  "></TextBlock>
+                <TextBlock x:Name="xCountTotal" Text=""></TextBlock>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>

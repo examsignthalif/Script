@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Script", "Script\Script.csproj", "{972C8936-A27D-405B-8BE2-732BB862CD7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeQHeading", "ChangeQHeading\ChangeQHeading.csproj", "{1D1831F8-0B52-4EC2-92B6-1F1ACD4FF6E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{972C8936-A27D-405B-8BE2-732BB862CD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972C8936-A27D-405B-8BE2-732BB862CD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972C8936-A27D-405B-8BE2-732BB862CD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972C8936-A27D-405B-8BE2-732BB862CD7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1831F8-0B52-4EC2-92B6-1F1ACD4FF6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1831F8-0B52-4EC2-92B6-1F1ACD4FF6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1831F8-0B52-4EC2-92B6-1F1ACD4FF6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1831F8-0B52-4EC2-92B6-1F1ACD4FF6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C42051BF-C6AB-499B-A742-2239C6BD1E5C}
+	EndGlobalSection
+EndGlobal
