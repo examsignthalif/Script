@@ -302,5 +302,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\inter1.txt" />
+    <Resource Include="Files\inter2.txt" />
+    <Resource Include="Files\linespace.txt" />
+    <Resource Include="Files\nonshape.txt" />
+    <Resource Include="Files\prefix.txt" />
+    <Resource Include="Files\prefix1.txt" />
+    <Resource Include="Files\prefix11NewFormat.txt" />
+    <Resource Include="Files\prefix12NewFormat.txt" />
+    <Resource Include="Files\prefix2.txt" />
+    <Resource Include="Files\prefix3.txt" />
+    <Resource Include="Files\shape2Rectangle.txt" />
+    <Resource Include="Files\shape6Rectangle.txt" />
+    <Resource Include="Files\suffix1.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
