@@ -155,7 +155,6 @@ namespace Script
         private void xEndIndex_TextChanged(object sender, TextChangedEventArgs e)
         {
             this.End = Convert.ToInt32(xEndIndex.Text);
-            this.End--;
         }
 
         public void InsertIntoXPS(List<FileItem> itemsList)
