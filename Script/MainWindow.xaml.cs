@@ -110,37 +110,6 @@ namespace Script
                 MessageBox.Show(msg);
             }
         }
-
-       
-
-        public async void GenerateXpsFile(FileItem item)
-        {
-            await Task.Run(() =>
-            {
-                XPSfilePathList.Add(new FileItem(item.Qno, word.Convert_WordToXPS(item.FilePath)));
-            });
-        }
-
-
-        public void InsertIntoXPS(List<FileItem> itemsList)
-        {
-            using (SqlConnection con = new SqlConnection(connectionstring))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                foreach(FileItem item in itemsList)
-                {
-                    cmd.Parameters.Clear();
-                    cmd.CommandText = "Insert into Xpstable(Qid,XpsFile) values(" + item.Qno + ",@XpsFile)";
-                    cmd.Parameters.AddWithValue("@XpsFile",(byte[])item.XpsByteData);
-                    cmd.ExecuteNonQuery();
-                }
-                con.Close();
-            }
-        }
-
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<FileItem> FINALtoINSERT = new List<FileItem>();
@@ -154,15 +123,9 @@ namespace Script
             InsertIntoXPS(FINALtoINSERT);
             repos = new List<MyQuestions>();
             XPSfilePathList = new List<FileItem>();
-            MessageBox.Show("Inserted sucessfully...!");
             xInsertBtn.Visibility = Visibility.Collapsed;
-        }
-
-      
-
-        void StartBeep()
-        {
-            Console.Beep(3000, 4000);
+            Console.Beep(3000, 1500);
+            MessageBox.Show("Inserted sucessfully...!");
         }
 
         private void xChoosePath_Click(object sender, RoutedEventArgs e)
@@ -176,9 +139,6 @@ namespace Script
                 xPathNameTB.Text = RootFolder;
             }
         }
-
-        
-
         private void xGetQuestion_Click(object sender, RoutedEventArgs e)
         {
             xGetQuestion.Visibility = Visibility.Collapsed;
@@ -192,11 +152,41 @@ namespace Script
             this.Start = Convert.ToInt32(xStartIndex.Text);
             this.Start--;
         }
-
         private void xEndIndex_TextChanged(object sender, TextChangedEventArgs e)
         {
             this.End = Convert.ToInt32(xEndIndex.Text);
             this.End--;
+        }
+
+        public void InsertIntoXPS(List<FileItem> itemsList)
+        {
+            using (SqlConnection con = new SqlConnection(connectionstring))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                foreach (FileItem item in itemsList)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = "Insert into Xpstable(Qid,XpsFile) values(" + item.Qno + ",@XpsFile)";
+                    cmd.Parameters.AddWithValue("@XpsFile", (byte[])item.XpsByteData);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+            }
+        }
+
+
+        public async void GenerateXpsFile(FileItem item)
+        {
+            await Task.Run(() =>
+            {
+                XPSfilePathList.Add(new FileItem(item.Qno, word.Convert_WordToXPS(item.FilePath)));
+            });
+        }
+        void StartBeep()
+        {
+            Console.Beep(3000, 4000);
         }
     }
 }

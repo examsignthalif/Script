@@ -106,7 +106,7 @@ namespace Script
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 con.Open();
-                cmd.CommandText = "select (Questions.Qid), Question, Hasimage, Subject, SClass, QType, Marks, QDesc,Topic, SubTopic, SheetType, QName from Questions where Qid not in (select qid from Xpstable) and SClass = "+ grade +"";
+                cmd.CommandText = "select (Questions.Qid), Question, Hasimage, Subject, SClass, QType, Marks, QDesc,Topic, SubTopic, SheetType, QName from Questions where Qid not in (select qid from Xpstable) and SClass = "+ grade + " and Hasimage = 0";
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
