@@ -20,7 +20,7 @@
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
                     <TextBlock Text="Class" FontSize="14" FontWeight="Bold"></TextBlock>
-                    <TextBox x:Name="xGradeTB" Width="100" Height="30"></TextBox>
+                    <TextBox x:Name="xGradeTB" TextChanged="xGradeTB_TextChanged" Width="100" Height="30"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
                     <Button x:Name="xGetQuestion" Click="xGetQuestion_Click" Width="100" Height="30" Content="Get"></Button>

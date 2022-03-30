@@ -32,7 +32,7 @@ namespace Script
         string connectionstring = "Data Source=.;Initial Catalog=WordProcess;Integrated Security=True";
         List<FileItem> WordFilePathList = new List<FileItem>();
 
-        
+
         List<MyQuestions> repos = new List<MyQuestions>();
         List<FileItem> XPSfilePathList = new List<FileItem>();
 
@@ -54,7 +54,7 @@ namespace Script
 
             int count = 0;
             //Generate word files for all quetsion item in Database
-            RootWordService service = new RootWordService(connectionstring,RootFolder);
+            RootWordService service = new RootWordService(connectionstring, RootFolder);
             if (repos.Count() > 0)
             {
                 #region Old
@@ -149,12 +149,34 @@ namespace Script
 
         private void xStartIndex_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.Start = Convert.ToInt32(xStartIndex.Text);
-            this.Start--;
+            if (App.AcceptOnlyIntegers(sender))
+            {
+                if (xStartIndex.Text.Length > 0)
+                {
+                    this.Start = Convert.ToInt32(xStartIndex.Text);
+                    this.Start--;
+                }
+            }
         }
         private void xEndIndex_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.End = Convert.ToInt32(xEndIndex.Text);
+            if (App.AcceptOnlyIntegers(sender))
+            {
+                if (xEndIndex.Text.Length > 0)
+                {
+                    this.End = Convert.ToInt32(xEndIndex.Text);
+                }
+            }
+        }
+        private void xGradeTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (App.AcceptOnlyIntegers(sender))
+            {
+                if (xGradeTB.Text.Length > 0)
+                {
+                    this.Grade = xGradeTB.Text;
+                }
+            }
         }
 
         public void InsertIntoXPS(List<FileItem> itemsList)
@@ -187,5 +209,7 @@ namespace Script
         {
             Console.Beep(3000, 4000);
         }
+
+        
     }
 }
